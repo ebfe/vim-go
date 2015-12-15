@@ -46,7 +46,7 @@ function! go#cmd#Build(bang, ...)
           call go#util#EchoProgress("building dispatched ...")
           silent! exe 'Make'
       else
-          silent! exe 'lmake!'
+          silent! exe 'make!'
       endif
       redraw!
     finally
@@ -111,7 +111,7 @@ function! go#cmd#Run(bang, ...)
     if g:go_dispatch_enabled && exists(':Make') == 2
         silent! exe 'Make'
     else
-        exe 'lmake!'
+        exe 'make!'
     endif
 
     let items = go#list#Get()
@@ -297,7 +297,7 @@ function! go#cmd#Generate(bang, ...)
     if g:go_dispatch_enabled && exists(':Make') == 2
         silent! exe 'Make'
     else
-        silent! exe 'lmake!'
+        silent! exe 'make!'
     endif
     redraw!
 
